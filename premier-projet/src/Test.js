@@ -10,8 +10,8 @@ class Test extends Component {
                     <h1>Very nice title</h1>
                 </div>
                 <h2>And a nice subtitle</h2>
-                <Membre name="Quentin"/>
-                <Membre name="Laura"/>
+                <Membre name="Quentin" surname="Ackermann"/>
+                <Membre name="Laura" surname="Garlatti"/>
                 <Membre name="Onoot"/>
             </Fragment>
         )
