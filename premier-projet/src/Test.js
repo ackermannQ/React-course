@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import './Test.css';
 import Membre from './components/Membre';
+import MembreChild from './components/MembreChild';
 
 class Test extends Component {
     render() {
@@ -12,7 +13,9 @@ class Test extends Component {
                 <h2>And a nice subtitle</h2>
                 <Membre name="Quentin" surname="Ackermann"/>
                 <Membre name="Laura" surname="Garlatti"/>
-                <Membre name="Onoot"/>
+                <MembreChild name="Onoot">
+                  I'm so noot
+                </MembreChild>
             </Fragment>
         )
     }
