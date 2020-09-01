@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Membre = () => {
+const Membre = (props) => {
     return (
-        <h3>Membre</h3>
+        <h3>Membre : {props.name}</h3>
     )
 }
 
