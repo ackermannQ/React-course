@@ -28,6 +28,13 @@ class ModifyState extends Component {
     this.setState({ family })
   }; 
 
+  handleChange = event => {
+    const family = { ...this.state.familyGang }
+    const name = event.target.value
+    familyGang.member3.name = name;
+    this.setState({ family })
+  }; 
+
   state = {
       familyGang
   }
@@ -39,6 +46,7 @@ class ModifyState extends Component {
           <h1>Testing class</h1>
         </div>
         <h2>Checkout the members of the fam'</h2>
+        <input value={familyGang.member3.name} onChange={this.handleChange}/>
         <Membre name={familyGang.member1.name}
         surname={familyGang.member1.surname}
         age={familyGang.member1.age}
