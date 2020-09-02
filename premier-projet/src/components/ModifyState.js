@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Membre from './Membre';
 import MembreChild from './MembreChild';
+import Button from './Button';
 
 const familyGang = {
     member1: {
@@ -21,9 +22,9 @@ const familyGang = {
 }
 
 class ModifyState extends Component {
-  handleClick = () => {
+  handleClick = (counter) => {
     const family = { ...this.state.familyGang }
-    family.member1.age += 1;
+    family.member1.age += counter;
     this.setState({ family })
   }; 
 
@@ -51,9 +52,8 @@ class ModifyState extends Component {
         age={familyGang.member3.age}>
           I'm so noot
         </MembreChild>
-        <button onClick={this.handleClick}>
-          Aging
-        </button>
+        <Button
+        aging = {() => this.handleClick(2)} />
       </Fragment>
     )
   }
