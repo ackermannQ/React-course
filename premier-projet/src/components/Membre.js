@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Membre = ({name, surname}) => {
+const Membre = ({name, surname, age}) => {
     return (
-        <h3>Membre : {name} {surname}</h3>
+        <h3>Membre : {name} {surname}, {age} y.o</h3>
     )
 }
 

@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import StateTest from './components/StateTest';
+import ModifyState from './components/ModifyState';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <StateTest />
+    <ModifyState />
   </React.StrictMode>,
   document.getElementById('root')
 );
