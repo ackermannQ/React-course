@@ -4,7 +4,7 @@ const MembreChild = ({name, surname, children}) => {
     return (
         <Fragment>
             <h3>Membre : {name} {surname}</h3>
-            <p>{children}</p>
+            {children ? <p>{children}</p> : <Fragment/>}
         </Fragment>
     )
 }
