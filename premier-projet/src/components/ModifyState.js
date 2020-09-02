@@ -32,7 +32,7 @@ class ModifyState extends Component {
       familyGang
   }
   render() {
-    const { family } = this.state;
+    // const { family } = this.state;
     return (
       <Fragment>
         <div className="Test">
@@ -53,7 +53,7 @@ class ModifyState extends Component {
           I'm so noot
         </MembreChild>
         <Button
-        aging = {() => this.handleClick(3)} />
+        aging = {() => this.handleClick(2)} />
       </Fragment>
     )
   }
