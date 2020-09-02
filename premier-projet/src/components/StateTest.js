@@ -20,7 +20,7 @@ const familyGang = {
     }
 }
 
-class Test extends Component {
+class SateTest extends Component {
     state = {
         familyGang
     }
@@ -42,4 +42,4 @@ class Test extends Component {
     }
 }
 
-export default Test;
+export default SateTest;
