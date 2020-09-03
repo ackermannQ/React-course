@@ -5,3 +5,6 @@ Initialization of a React project, get started and checking out the syntax/organ
 
 Playing with stateless props and children props
 Checking how to modify the state
+
+## Project-2 : Markdown editor
+Creating a basic real-time editor using markdown
