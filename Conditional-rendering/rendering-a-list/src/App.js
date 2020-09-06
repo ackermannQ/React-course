@@ -18,12 +18,13 @@ const family = {
 
 class App extends Component {
   state = {
-    // family
+    family
   }
   render() {
     const list = Object.keys(family)
     .map(membre => {
-      console.log(family[membre])
+      console.log(family[membre].name)
+      console.log(family[membre].age)
     })
     return (
       <div className="container">
