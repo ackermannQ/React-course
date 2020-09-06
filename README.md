@@ -8,3 +8,10 @@ Checking how to modify the state
 
 ## Project-2 : Markdown editor
 Creating a basic real-time editor using markdown
+
+
+## Conditional-rendering
+### Basics
+Simple rendering using a function and if-else statement  
+ 
+### Rendering-a-list
