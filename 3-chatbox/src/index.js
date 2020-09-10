@@ -4,6 +4,18 @@ import './index.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 import Connection from './components/Connection'
+import { BrowserRouter } from 'react-router-dom'
+
+import { BrowserRoutern, Route, Switch } from 'react-router-dom'
+
+
+const Root = () => (
+    <BrowserRouter>
+        <Switch>
+            
+        </Switch>
+    </BrowserRouter>
+)
 
 ReactDOM.render(<Connection/>, document.getElementById('root'))
 
