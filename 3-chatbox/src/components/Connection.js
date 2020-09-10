@@ -16,6 +16,7 @@ class Connection extends Component {
             this.setState({ isEmpty: true })
         } else {
             this.setState({ isEmpty: false })
+            this.setState({ nickname: null })
         }
     }
     
@@ -31,8 +32,8 @@ class Connection extends Component {
                     />
                 <button type="submit">Connect</button>
                 <div className="checkConnection">
-                    { !this.state.isEmpty ? "Input a pseudo!" : " " }
-                    { this.state.nickname }
+                    { !this.state.isEmpty ? "Input a pseudo!" : "" }
+                    { this.state.nickname !== null ? this.state.nickname: null }
                 </div>
                 </form>
             </div>
