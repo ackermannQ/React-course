@@ -7,6 +7,7 @@ import Connection from './components/Connection'
 import { BrowserRouter } from 'react-router-dom'
 
 import { BrowserRoutern, Route, Switch } from 'react-router-dom'
+import NotFound from './components/NotFound'
 
 
 const Root = () => (
@@ -14,6 +15,7 @@ const Root = () => (
         <Switch>
             <Route exact path='/' component={ Connection }/>
             <Route path='/pseudo/:pseudo' component={ App }/>
+            <Route component={ NotFound }/>
         </Switch>
     </BrowserRouter>
 )
