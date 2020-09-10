@@ -25,7 +25,7 @@ class Connection extends Component {
             <div className="connectionBox">
                 <form className="connection">
                     <input
-                    pseudo="Pseudo"
+                    placeholder="Pseudo"
                     type="text"
                     required
                     onChange={ (e) => this.handleChange(e) }

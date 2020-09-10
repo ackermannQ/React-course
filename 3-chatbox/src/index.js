@@ -12,12 +12,13 @@ import { BrowserRoutern, Route, Switch } from 'react-router-dom'
 const Root = () => (
     <BrowserRouter>
         <Switch>
-            
+            <Route exact path='/' component={ Connection }/>
+            <Route path='/pseudo/:pseudo' component={ App }/>
         </Switch>
     </BrowserRouter>
 )
 
-ReactDOM.render(<Connection/>, document.getElementById('root'))
+ReactDOM.render(<Root/>, document.getElementById('root'))
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
