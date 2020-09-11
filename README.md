@@ -18,3 +18,5 @@ Simple rendering using a function and if-else statement
 
 ## Project-3 : Chatbox 
 Creating a simple chat using React, React Router and Firebase !
+
+## Horror-Movies Finder
