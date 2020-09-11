@@ -25,6 +25,7 @@ addMessage = message => {
           <Message />
         </div>
         <Form
+        length={ 150 }
         nickname={ this.state.nickname }
         addMessage={ this.addMessage }
         />

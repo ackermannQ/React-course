@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 class Form extends Component {
     state = {
-        message: ''
+        message: '',
+        length: this.props.length
     }
 
     createMessage = () => {
@@ -20,12 +21,14 @@ class Form extends Component {
     handleSubmit = event => {
         event.preventDefault()
         this.createMessage()
+        this.setState({ length: this.props.length })
 
     }
 
     handleChange = event => {
         const message = event.target.value
-        this.setState({ message })
+        const length = this.props.length - message.length
+        this.setState({ message, length })
     }
 
     render() {
@@ -37,9 +40,9 @@ class Form extends Component {
             value={ this.state.message }
             onChange={ this.handleChange }
             required
-            maxlenght='150'/>
+            maxlength={ this.props.length }/>
             <div className='info'>
-                140
+                { this.state.length }
             </div>
             <button type="submit">
                 Send
