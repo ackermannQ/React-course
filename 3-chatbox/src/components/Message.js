@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-const Message = () => {
+const Message = ({ nickname, message }) => {
     return (
       <p className="user-message">
-        Mehmeh
+        { message }
       </p>
     );
 }

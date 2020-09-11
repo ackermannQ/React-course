@@ -17,13 +17,26 @@ addMessage = message => {
 }
 
   render () {
+    const messages = Object
+    .keys(this.state.messages)
+    .map(key =>
+      <Message
+      key={ key }
+      message={ this.state.messages[key].message } 
+      nickname={ this.state.messages[key].nickname }>
+
+      </Message>)
+    console.log(messages)
     return (
       <div className='box'>
-        <div className="messages">
-          <Message />
-          <Message />
-          <Message />
+      <div>
+       <div className="messages">
+         <div className="message">
+           { messages }
+         </div>
+          
         </div>
+      </div>
         <Form
         length={ 150 }
         nickname={ this.state.nickname }

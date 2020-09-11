@@ -31,6 +31,12 @@ class Form extends Component {
         this.setState({ message, length })
     }
 
+    handleKeyUp = event => {
+        if (event.key === "Enter") {
+            this.createMessage(event)
+        }
+    }
+
     render() {
         return (
             <form
@@ -39,8 +45,9 @@ class Form extends Component {
             <textarea
             value={ this.state.message }
             onChange={ this.handleChange }
+            onKeyUp={ this.handleKeyUp }
             required
-            maxlength={ this.props.length }/>
+            maxLength={ this.props.length }/>
             <div className='info'>
                 { this.state.length }
             </div>
