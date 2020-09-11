@@ -15,3 +15,6 @@ Creating a basic real-time editor using markdown
 Simple rendering using a function and if-else statement  
  
 ### Rendering-a-list
+
+## Project-3 : Chatbox 
+Creating a simple chat using React, React Router and Firebase !
