@@ -1,11 +1,27 @@
 import React, { Component } from 'react';
 
 class Form extends Component {
+    state = {
+        message: ''
+    }
+
+    handleSubmit = event => {
+        event.preventDefault()
+    }
+
+    handleChange = event => {
+        const message = event.target.value
+        this.setState({ message })
+    }
+
     render() {
         return (
-            <form>
-            <textarea
+            <form
             className="form"
+            onSubmit={ this.handleSubmit }>
+            <textarea
+            value={ this.state.message }
+            onChange={ this.handleChange }
             required
             maxlenght='150'/>
             <div className='info'>
