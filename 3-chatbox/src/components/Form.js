@@ -5,8 +5,22 @@ class Form extends Component {
         message: ''
     }
 
+    createMessage = () => {
+        const { addMessage, nickname } = this.props
+
+        const message = {
+            nickname,
+            message: this.state.message
+        }
+
+        addMessage(message)
+        this.setState({ message: '' })
+    }
+
     handleSubmit = event => {
         event.preventDefault()
+        this.createMessage()
+
     }
 
     handleChange = event => {
