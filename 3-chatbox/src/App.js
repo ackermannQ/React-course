@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, createRef } from 'react'
 import './App.css'
 
 import Form from './components/Form'
@@ -11,6 +11,8 @@ class App extends Component {
     messages: {},
     nickname: this.props.match.params.pseudo
   }
+
+  messagesRef = createRef()
   
   componentDidMount () {
     base.syncState('/', {
@@ -19,9 +21,21 @@ class App extends Component {
     })
   }
 
+  componentDidUpdate() {
+    const ref = this.messagesRef.current
+    ref.scrollTop = ref.scrollHeight
+  }
+
 addMessage = message => {
   const messages = { ...this.state.messages }
   messages[`message-${Date.now()}`] = message
+  Object
+  .keys(messages)
+  .slice(0, -10)
+  .forEach(key => {
+    messages[key] = null
+  })
+
   this.setState({ messages }) 
 }
 
@@ -33,13 +47,11 @@ addMessage = message => {
       key={ key }
       message={ this.state.messages[key].message } 
       nickname={ this.state.messages[key].nickname }>
-
       </Message>)
-    console.log(messages)
     return (
       <div className='box'>
       <div>
-       <div className="messages">
+       <div className="messages" ref={this.messagesRef}>
          <div className="message">
            { messages }
          </div>
