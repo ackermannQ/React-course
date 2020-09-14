@@ -39,33 +39,36 @@ addMessage = message => {
   this.setState({ messages }) 
 }
 
-  render () {
-    const messages = Object
-    .keys(this.state.messages)
-    .map(key =>
-      <Message
-      key={ key }
-      message={ this.state.messages[key].message } 
-      nickname={ this.state.messages[key].nickname }>
-      </Message>)
-    return (
-      <div className='box'>
-      <div>
-       <div className="messages" ref={this.messagesRef}>
-         <div className="message">
-           { messages }
-         </div>
-          
+isUser = pseudo => pseudo === this.state.nickname
+
+render () {
+  const messages = Object
+  .keys(this.state.messages)
+  .map(key =>
+    <Message
+    key={ key }
+    isUser={ this.isUser }
+    message={ this.state.messages[key].message } 
+    nickname={ this.state.messages[key].nickname }>
+    </Message>)
+  return (
+    <div className='box'>
+    <div>
+      <div className="messages" ref={this.messagesRef}>
+        <div className="message">
+          { messages }
         </div>
+        
       </div>
-        <Form
-        length={ 150 }
-        nickname={ this.state.nickname }
-        addMessage={ this.addMessage }
-        />
-      </div>
-    )
-  }
+    </div>
+      <Form
+      length={ 150 }
+      nickname={ this.state.nickname }
+      addMessage={ this.addMessage }
+      />
+    </div>
+  )
+}
 }
 
 export default App
