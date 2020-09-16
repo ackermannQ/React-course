@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
 import Countdown from './components/Countdown'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -12,9 +13,9 @@ function App() {
         <div className="timer">
           <Countdown />
         </div>
-        Until next KL episode 
+        
       </div>
-
+      <Footer/ >
     </div>
   );
 }
