@@ -16,7 +16,7 @@ function Countdown() {
   // +new Date(`${year}-${currentKLMonth}-${currentKLDay}`).setHours(21, 34)
   
   const startTimer = () => {
-    const countdownDate = new Date(`${year}-${currentKLMonth}-${currentKLDay}`).getTime()
+    const countdownDate = new Date(`${year}-${currentKLMonth}-${currentKLDay}`).setHours(21, 5)
     interval = setInterval(() => {
 
       const currentTime = new Date().getTime()
