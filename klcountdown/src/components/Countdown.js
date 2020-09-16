@@ -1,53 +1,55 @@
-import React, { useEffect, useState } from "react";
-
+import React, { useEffect, useRef, useState } from "react";
+import './Countdown.css'
 
 function Countdown() {
-  const currentKLMonth = "09"
-  let startKLDay = "16"
-  let currentKLDay = startKLDay
-  const calculateTimeLeft = () => {
-    let year = new Date().getFullYear();
-    const difference = +new Date(`${year}-${currentKLMonth}-${currentKLDay}`).setHours(21, 34) - +new Date();
-    let timeLeft = { };
+  const [timerDays, setTimerDays] = useState('00')
+  const [timerHours, setTimerHours] = useState('00')
+  const [timerMinutes, setTimerMinutes] = useState('00')
+  const [timerSeconds, setTimerSeconds] = useState('00')
 
-    if (difference > 0) {
-      timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
-      };
-    }
-    return timeLeft;
-    
+  let interval = useRef()
+
+  const currentKLMonth = "09"
+  let startKLDay = "18"
+  let currentKLDay = startKLDay
+  const year = new Date().getFullYear()
+  // +new Date(`${year}-${currentKLMonth}-${currentKLDay}`).setHours(21, 34)
+  
+  const startTimer = () => {
+    const countdownDate = new Date(`${year}-${currentKLMonth}-${currentKLDay}`).getTime()
+    interval = setInterval(() => {
+
+      const currentTime = new Date().getTime()
+      const timeLeft = countdownDate - currentTime
+
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24))
+      const hours = Math.floor(timeLeft %  (1000 * 60 * 60 * 24) / (1000 * 60 * 60))
+      const minutes = Math.floor(timeLeft % (1000 * 60 * 60 ) / (1000 * 60))
+      const seconds = Math.floor(timeLeft % (1000 * 60) / 1000)
+      
+      if (timeLeft < 0) {
+        clearInterval(interval.current)
+      } else {
+        setTimerDays(days)
+        setTimerHours(hours)
+        setTimerMinutes(minutes)
+        setTimerSeconds(seconds)
+      }
+
+    }, 1000)
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-  const [year] = useState(new Date().getFullYear());
-
   useEffect(() => {
-    setTimeout(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-  });
-
-  const timerComponents = [];
-
-  Object.keys(timeLeft).forEach((interval) => {
-    if (!timeLeft[interval]) {
-      return;
+    startTimer()
+    return () => {
+      clearInterval(interval.current)
     }
-
-    timerComponents.push(
-      <span>
-        {timeLeft[interval]} {interval}{" "}
-      </span>
-    );
-  });
+  })
 
   return (
-    <div>
-      { timerComponents.length ? timerComponents : <span>Time's up! Until next KL episode </span> }
+    <div className="timer">
+    { timerDays } Days : { timerHours } Hours : { timerMinutes } : Minutes : { timerSeconds } Seconds
+      {/* { timerComponents.length ? timerComponents : <span>Time's up! Until next KL episode </span> } */}
     </div>
   );
 }

@@ -43,12 +43,11 @@ h1 {
     height: 100%;
 }
 
-
 .timer div:last-child {
     border: 1px solid #fff;
-    border-radius: qpx;
+    border-radius: 3px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     margin-top: 3em;
     padding: 3em;
     text-align: center;
@@ -60,7 +59,7 @@ h1 {
 
 .footer {
     text-align: center;
-    margin-top: 11em;
+    padding-top: 3em;
 }
 
 @media screen and (max-width: 480px) {
