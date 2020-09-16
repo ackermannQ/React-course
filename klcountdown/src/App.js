@@ -11,11 +11,13 @@ function App() {
       </div>
       <div className="timer__container">
         <div className="timer">
-          <Countdown />
+          <Countdown/>
         </div>
         
       </div>
-      <Footer/ >
+      <div className="footer">
+        <Footer/>
+      </div>
     </div>
   );
 }

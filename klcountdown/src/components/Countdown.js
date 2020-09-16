@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 function Countdown() {
   const currentKLMonth = "09"
-  let startKLDay = "8"
+  let startKLDay = "16"
   let currentKLDay = startKLDay
   const calculateTimeLeft = () => {
     let year = new Date().getFullYear();
