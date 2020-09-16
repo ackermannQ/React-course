@@ -13,7 +13,6 @@ function App() {
         <div className="timer">
           <Countdown/>
         </div>
-        
       </div>
       <div className="footer">
         <Footer/>

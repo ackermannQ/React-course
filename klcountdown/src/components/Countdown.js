@@ -48,8 +48,15 @@ function Countdown() {
 
   return (
     <div className="timer">
-    { timerDays } Days : { timerHours } Hours : { timerMinutes } : Minutes : { timerSeconds } Seconds
-      {/* { timerComponents.length ? timerComponents : <span>Time's up! Until next KL episode </span> } */}
+      <p>{ timerDays }</p>
+      Days :
+      <p>{ timerHours }</p>
+      Hours :
+      <p>{ timerMinutes }</p>
+      Minutes : 
+      <p>{ timerSeconds }</p>
+      Seconds
+    {/* { timerComponents.length ? timerComponents : <span>Time's up! Until next KL episode </span> } */}
     </div>
   );
 }

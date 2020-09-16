@@ -30,6 +30,11 @@ h1 {
     font-weight: 300;
 }
 
+.timer__container {
+margin-left: 40em;
+margin-right: 40em;
+}
+
 .timer {
     margin-top: 3em;
     background-color: rgb(0, 0, 0, 0.5);
@@ -47,7 +52,7 @@ h1 {
     border: 1px solid #fff;
     border-radius: 3px;
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     margin-top: 3em;
     padding: 3em;
     text-align: center;
