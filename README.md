@@ -1,5 +1,5 @@
-# React-course
-
+# React-course  
+Here are some basics projects I created to get a grasp of ReactJS. Bigger projects deserve their own repositories, thus I will store here only the small ones. They are used to tackle some particular issue and ReactJS features  
 ## Premier-projet : First Project
 Initialization of a React project, get started and checking out the syntax/organization of the files in the folder
 
