@@ -15,7 +15,7 @@ function Countdown() {
   const year = new Date().getFullYear()
   // +new Date(`${year}-${currentKLMonth}-${currentKLDay}`).setHours(21, 34)
   
-  const startTimer = () => {
+  const startTimer = (year, currentKLMonth, currentKLDay) => {
     const countdownDate = new Date(`${year}-${currentKLMonth}-${currentKLDay}`).setHours(21, 5)
     interval = setInterval(() => {
 
@@ -28,23 +28,36 @@ function Countdown() {
       const seconds = Math.floor(timeLeft % (1000 * 60) / 1000)
       
       if (timeLeft < 0) {
-        clearInterval(interval.current)
+        clearInterval()
       } else {
         setTimerDays(days)
         setTimerHours(hours)
         setTimerMinutes(minutes)
         setTimerSeconds(seconds)
-      }
+      }  
 
     }, 1000)
   };
 
   useEffect(() => {
-    startTimer()
+    startTimer(year, currentKLMonth, currentKLDay)
+    changeTime()
+    startTimer(year, currentKLMonth, currentKLDay)
     return () => {
       clearInterval(interval.current)
     }
   })
+
+  const changeTime = () => {
+    currentKLDay = +(startKLDay) + 7
+    startKLDay = currentKLDay
+    const numberOfDays = new Date(year, currentKLDay, 0).getDate();
+    
+    if (+(startKLDay) >= numberOfDays) {
+      currentKLDay = (+(startKLDay) - numberOfDays).toString()
+      currentKLMonth = (+(currentKLMonth) + 1).toString()
+    }
+  };
 
   return (
     <div className="timer">
