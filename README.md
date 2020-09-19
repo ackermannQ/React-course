@@ -22,5 +22,5 @@ Creating a simple chat using React, React Router and Firebase !
 Simply find a horror movie you like
 
 ## Koh-Lanta Countdown
-Check this KL countdown to know how much time remains until the next episode ! (French TV show about impressive people surviving on islands)
+Check this KL countdown to know how much time remains until the next episode ! (French TV show about impressive people surviving on islands)  
 [Check it out](https://klcountdown.vercel.app/)
