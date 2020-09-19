@@ -1,0 +1,17 @@
+img {
+    padding-left: 30px;
+    border-radius: 8px;
+    display: flex;
+}
+
+.movie__title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+}
+
+p {
+    padding-left: 25%;
+    text-align: center;
+    width: 50%;
+}
+
