@@ -6,15 +6,17 @@ import $ from 'jquery'
 class Movies extends Component {
   constructor(props) {
     super(props)
-    this.state = { rows: null }
+    this.state = { 
+      rows: null
+    }
   }
   
   componentDidMount() {
     this.performSearch()
   }
 
-  performSearch = () => {
-    const urlString = "https://api.themoviedb.org/3/search/movie?api_key=47e60775dec848a0846f06525377d027&query=`${ inputText }`&genre=27&&sort_by=vote_average.desc&vote_count.gte=10&&primary_release_year=2015&include_adult=true"
+  performSearch = (searchTerm) => {
+    const urlString = "https://api.themoviedb.org/3/search/movie?api_key=47e60775dec848a0846f06525377d027&genre_ids=27&query=" + searchTerm
     $.ajax({
       url: urlString,
       success: (searchResults) => {
@@ -35,12 +37,23 @@ class Movies extends Component {
         console.error("Failed to fetch data")
       }
     })
+  }
 
+  searchTermHandler (event) {
+    console.log(event.target.value)
+    const searchTerm = event.target.value
+    this.performSearch(searchTerm)
   }
 
   render() {
     return (
       <div>
+      <input className="searchbar" 
+        placeholder="Search for blood"
+        onChange={ this.searchTermHandler.bind(this) }
+        type="text"
+        >
+        </input>
           { this.state.rows }
       </div>
     );
