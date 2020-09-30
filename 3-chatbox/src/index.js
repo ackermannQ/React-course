@@ -4,9 +4,8 @@ import './index.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 import Connection from './components/Connection'
-import { BrowserRouter } from 'react-router-dom'
 
-import { BrowserRoutern, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import NotFound from './components/NotFound'
 
 
